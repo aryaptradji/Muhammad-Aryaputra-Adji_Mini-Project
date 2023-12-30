@@ -3,14 +3,14 @@ import 'package:fashion_hub/config/theme/theme_color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PageViewComponent extends StatefulWidget {
-  const PageViewComponent({super.key});
+class PageViewWidget extends StatefulWidget {
+  const PageViewWidget({super.key});
 
   @override
-  State<PageViewComponent> createState() => _PageViewComponentState();
+  State<PageViewWidget> createState() => _PageViewWidgetState();
 }
 
-class _PageViewComponentState extends State<PageViewComponent> {
+class _PageViewWidgetState extends State<PageViewWidget> {
   int pageIndex = 0;
   int _currentPage = 0;
 

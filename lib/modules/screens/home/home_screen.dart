@@ -1,8 +1,7 @@
 import 'package:email_validator/email_validator.dart';
-import 'package:fashion_hub/component/page_view_component.dart';
-import 'package:fashion_hub/component/text_field_component.dart';
 import 'package:fashion_hub/config/theme/theme_color.dart';
-
+import 'package:fashion_hub/widgets/page_view_widget.dart';
+import 'package:fashion_hub/widgets/text_field_contact.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -131,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ScrollViewKeyboardDismissBehavior.onDrag,
                   shrinkWrap: true,
                   children: [
-                    const PageViewComponent(),
+                    const PageViewWidget(),
                     const SizedBox(height: 80),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -159,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               Flexible(
                                 flex: 1,
-                                child: TextFieldComponent(
+                                child: TextFieldContact(
                                   controller: firstNameController,
                                   textInputAction: TextInputAction.next,
                                   keyboardType: TextInputType.name,
@@ -175,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               const SizedBox(width: 12),
                               Flexible(
                                 flex: 1,
-                                child: TextFieldComponent(
+                                child: TextFieldContact(
                                   controller: lastNameController,
                                   textInputAction: TextInputAction.next,
                                   keyboardType: TextInputType.name,
@@ -191,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                           const SizedBox(height: 20),
-                          TextFieldComponent(
+                          TextFieldContact(
                             controller: emailController,
                             textInputAction: TextInputAction.next,
                             keyboardType: TextInputType.emailAddress,
@@ -204,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             errorText: errorTextEmail,
                           ),
                           const SizedBox(height: 20),
-                          TextFieldComponent(
+                          TextFieldContact(
                             controller: helpController,
                             textInputAction: TextInputAction.newline,
                             keyboardType: TextInputType.multiline,
@@ -225,11 +224,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                     helpValue.isNotEmpty &&
                                     isEnable
                                 ? () {
-                                    print('Form submitted!');
-                                    print('First name: $firstNameValue');
-                                    print('Last name: $lastNameValue');
-                                    print('Email: $emailValue');
-                                    print('Help Question: $helpValue');
+                                    debugPrint('Form submitted!');
+                                    debugPrint('First name: $firstNameValue');
+                                    debugPrint('Last name: $lastNameValue');
+                                    debugPrint('Email: $emailValue');
+                                    debugPrint('Help Question: $helpValue');
                                     firstNameController.clear();
                                     lastNameController.clear();
                                     emailController.clear();

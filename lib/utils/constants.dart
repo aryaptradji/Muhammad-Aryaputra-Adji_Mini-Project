@@ -1,4 +1,4 @@
-import 'package:fashion_hub/modules/product/models/product_model.dart';
+import 'package:fashion_hub/modules/models/product/product_model.dart';
 
 class Constants {
   static List<ProductModel> productModel = [

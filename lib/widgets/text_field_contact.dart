@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../config/theme/theme_color.dart';
 
-class TextFieldComponent extends StatelessWidget {
+class TextFieldContact extends StatelessWidget {
   final String? labelText;
   final String? errorText;
   final void Function(String)? onChanged;
@@ -13,7 +13,7 @@ class TextFieldComponent extends StatelessWidget {
   final TextInputType? keyboardType;
   final int? maxLines;
 
-  const TextFieldComponent({
+  const TextFieldContact({
     Key? key,
     required this.labelText,
     required this.onChanged,

@@ -1,6 +1,6 @@
-import 'package:fashion_hub/modules/home/screens/home_screen.dart';
+import 'package:fashion_hub/modules/screens/home/home_screen.dart';
 import 'package:fashion_hub/config/theme/theme_color.dart';
-import 'package:fashion_hub/modules/product/screens/product_screen.dart';
+import 'package:fashion_hub/modules/screens/product/product_screen.dart';
 import 'package:flutter/material.dart';
 
 List<Widget> screens = [
