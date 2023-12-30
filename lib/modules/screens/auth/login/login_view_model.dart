@@ -50,6 +50,7 @@ class LoginViewModel extends ChangeNotifier {
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
+    tabController.dispose();
     super.dispose();
   }
 
