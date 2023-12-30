@@ -40,6 +40,7 @@ class RegisterViewModel extends ChangeNotifier {
     _numberController.dispose();
     _passController.dispose();
     _repPassController.dispose();
+    tabController.dispose();
     super.dispose();
   }
 

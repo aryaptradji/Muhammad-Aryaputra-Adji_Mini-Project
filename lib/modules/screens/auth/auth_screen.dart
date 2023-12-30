@@ -2,7 +2,6 @@ import 'package:animate_do/animate_do.dart';
 import 'package:fashion_hub/config/theme/theme_color.dart';
 import 'package:fashion_hub/modules/screens/auth/auth_view_model.dart';
 import 'package:fashion_hub/modules/screens/auth/login/login_screen.dart';
-import 'package:fashion_hub/modules/screens/auth/login/login_view_model.dart';
 import 'package:fashion_hub/modules/screens/auth/register/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,7 +12,7 @@ class AuthScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final loginProvider = Provider.of<LoginViewModel>(context);
+    final authProvider = Provider.of<AuthViewModel>(context);
 
     return FadeIn(
       duration: const Duration(seconds: 5),
@@ -99,38 +98,35 @@ class AuthScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            child: Consumer<AuthViewModel>(
-                                builder: (context, authProvider, child) {
-                              return Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  SizedBox(
-                                    child: TabBar(
-                                      labelColor: ThemeColor.accentColor,
-                                      labelStyle:
-                                          GoogleFonts.vidaloka(fontSize: 16),
-                                      dividerColor: Colors.transparent,
-                                      indicatorColor: ThemeColor.accentColor,
-                                      unselectedLabelColor: Colors.grey,
-                                      controller: authProvider.tabController,
-                                      tabs: const [
-                                        Tab(text: 'Login'),
-                                        Tab(text: 'Register'),
-                                      ],
-                                    ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                SizedBox(
+                                  child: TabBar(
+                                    labelColor: ThemeColor.accentColor,
+                                    labelStyle:
+                                        GoogleFonts.vidaloka(fontSize: 16),
+                                    dividerColor: Colors.transparent,
+                                    indicatorColor: ThemeColor.accentColor,
+                                    unselectedLabelColor: Colors.grey,
+                                    controller: authProvider.tabController,
+                                    tabs: const [
+                                      Tab(text: 'Login'),
+                                      Tab(text: 'Register'),
+                                    ],
                                   ),
-                                  Expanded(
-                                    child: TabBarView(
-                                      controller: authProvider.tabController,
-                                      children: const [
-                                        LoginScreen(),
-                                        RegisterScreen(),
-                                      ],
-                                    ),
+                                ),
+                                Expanded(
+                                  child: TabBarView(
+                                    controller: authProvider.tabController,
+                                    children: const [
+                                      LoginScreen(),
+                                      RegisterScreen(),
+                                    ],
                                   ),
-                                ],
-                              );
-                            }),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

@@ -14,6 +14,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final registerProvider = Provider.of<RegisterViewModel>(context);
+
     return StatefulHelper(
       onInit: () => registerProvider.changeScreen(),
       child: SingleChildScrollView(
@@ -77,10 +78,10 @@ class LoginScreen extends StatelessWidget {
                       loginProvider.setEmailValue(value);
                       loginProvider.emailOnChanged();
                     },
-                    validator: (value) {
-                      return loginProvider.emailValidator(value);
-                    },
-                    errorText: emailErrorText,
+                    // validator: (value) {
+                    //   return loginProvider.emailValidator(value);
+                    // },
+                    // errorText: emailErrorText,
                     obscureText: false,
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.emailAddress,
@@ -105,10 +106,10 @@ class LoginScreen extends StatelessWidget {
                       loginProvider.setPasswordValue(value);
                       loginProvider.passwordOnChanged();
                     },
-                    validator: (value) {
-                      return loginProvider.passwordValidator(value);
-                    },
-                    errorText: passwordErrorText,
+                    // validator: (value) {
+                    //   return loginProvider.passwordValidator(value);
+                    // },
+                    // errorText: passwordErrorText,
                     obscureText: isHidePassword,
                     textInputAction: TextInputAction.done,
                     keyboardType: TextInputType.visiblePassword,
